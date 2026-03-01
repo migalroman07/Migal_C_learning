@@ -8,22 +8,18 @@ int main() {
   long long cnt = 0;
   fgets(line, sizeof(line), f);
 
-  char *token =
-      strtok(line, ",\n"); // Get the first token feom the while string.
+  char *token = strtok(line, ",\n"); // Get the first token feom the while string.
 
   while (token != NULL) {
     long long start, end;
     char str[20];
-    sscanf(token, "%lld-%lld", &start,
-           &end); // Get start and end values from the token.
+    sscanf(token, "%lld-%lld", &start, &end); // Get start and end values from the token.
 
     for (long long i = start; i <= end; ++i) {
       sprintf(str, "%lld", i); // Convert and
       int l = strlen(str);     // 	get lenght of the current number.
 
-      if (l % 2 == 0 &&
-          !strncmp(str, str + l / 2,
-                   l / 2)) { // Check the number and add it to the cnt.
+      if (l % 2 == 0 && !strncmp(str, str + l / 2, l / 2)) { // Check the number and add it to the cnt.
         cnt += i;
       }
     }

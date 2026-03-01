@@ -19,9 +19,7 @@ int main() {
     }
 
     /* Count it */
-    if (abs(pos) % 100 == 0) {
-      cnt += 1;
-    }
+    if (abs(pos) % 100 == 0) { cnt += 1; }
   }
 
   fclose(f);

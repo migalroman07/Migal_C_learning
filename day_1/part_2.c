@@ -1,6 +1,3 @@
-/*
- * Only the differences are commented.
- */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -25,12 +22,9 @@ int main() {
       pos += num;
     }
 
-    if ((pos / 100 != prev / 100) || (pos > 0 && prev < 0) ||
-        (pos < 0 && prev > 0)) { // Different condition...
-      cnt += max(
-          1,
-          abs(prev / 100 -
-              pos / 100)); // Increase the cnt by the number of 100's crossed.
+    if ((pos / 100 != prev / 100) || (pos > 0 && prev < 0) || (pos < 0 && prev > 0)) { // Different condition...
+      cnt += max(1,
+        abs(prev / 100 - pos / 100)); // Increase the cnt by the number of 100's crossed.
     }
   }
 
